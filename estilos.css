@@ -1,0 +1,143 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background: url('https://i.ibb.co/zVf8GVcB/studio-ghibli-style.webp') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+}
+
+header {
+    /* padding: 10px 0; */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+footer {
+    user-select: none;
+    margin-top: auto;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 60px;
+}
+
+main div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+main div ul {
+    background-color: transparent;
+    margin: 0 auto;
+    height: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+}
+
+main div ul li {
+    padding: 15px 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main div ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    transform: translateY(-3px);
+}
+
+main div ul li a {
+    color: #2a2414;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+main div ul li:hover a {
+    color: #fff;
+    font-weight: 700;
+}
+
+header h1 {
+    background: url(https://i.ibb.co/G34bX8xn/text.jpg) top;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: animate 10s linear infinite;
+    margin: 0;
+    user-select: none;
+    font-size: 2.5em;
+}
+
+@keyframes animate {
+    from { background-position-x: 0; }
+    to { background-position-x: -100px; }
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) and (min-width: 801px) {
+    main div ul {
+        max-width: 400px;
+        padding: 15px;
+    }
+    
+    main div ul li {
+        padding: 12px 18px;
+        margin: 12px 0;
+    }
+    
+    main div ul li a {
+        font-size: 1.1em;
+    }
+    
+    header h1 {
+        font-size: 2.2em;
+    }
+}
+
+/* Desktop adjustments for smaller screens */
+@media (max-width: 1200px) and (min-width: 801px) {
+    main {
+        padding: 15px;
+    }
+    
+    main div ul {
+        margin: 0 20px;
+    }
+}

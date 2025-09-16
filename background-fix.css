@@ -1,0 +1,76 @@
+/* Corrección específica para el background en móviles */
+
+@media (max-width: 768px) {
+    /* Remover background del body en móviles */
+    body {
+        background: none !important;
+    }
+    
+    /* Crear background que cubra toda el área scrolleable */
+    html::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100%;
+        background: url('https://i.ibb.co/zVf8GVcB/studio-ghibli-style.webp') no-repeat center top;
+        background-size: cover;
+        background-attachment: scroll;
+        z-index: -999;
+        pointer-events: none;
+    }
+    
+    html {
+        background: url('https://i.ibb.co/zVf8GVcB/studio-ghibli-style.webp') no-repeat center top;
+        background-size: cover;
+        background-attachment: scroll;
+        min-height: 100%;
+    }
+    
+    /* Asegurar que todo el contenido esté por encima */
+    body {
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1px);
+    }
+    
+    header,
+    main,
+    footer,
+    #maindemovil,
+    #mainmovil {
+        position: relative;
+        z-index: 1;
+    }
+    
+    button {
+        z-index: 1001 !important;
+    }
+    
+    /* Mejorar legibilidad del contenido */
+    #descripcion {
+        background: rgba(0, 0, 0, 0.2) !important;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .container {
+        background: rgba(0, 0, 0, 0.1) !important;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    body::before {
+        /* Asegurar cobertura completa */
+        width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center center;
+    }
+}

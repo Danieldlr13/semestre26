@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+    .calendar { width: 100%; max-width: 600px; margin: 2em auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; }
+        .calendar-days, .calendar-dates { display: grid; grid-template-columns: repeat(7, 1fr); }
+        .calendar-days div, .calendar-dates div { padding: 0.5em; text-align: center; }
+        .calendar-dates div { border: 1px solid #ddd; min-height: 60px; position: relative; cursor: pointer; }
+        .event { background: #4caf50; color: #fff; padding: 2px 4px; border-radius: 3px; font-size: 0.8em; margin-top: 2px; display: block; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; }
+    .modal-content { background: #fff; padding: 1em; border-radius: 5px; min-width: 300px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .modal input, .modal textarea { width: 100%; margin-bottom: 0.5em; }
+        .modal-buttons { display: flex; justify-content: flex-end; gap: 0.5em; }
+    </style>
+</head>
+<body style="background: #fff;">
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 2em; margin-bottom: 1.5em; gap: 1.5em;">
+        <button onclick="window.location.href='index.html'" style="background: linear-gradient(90deg,#1976d2 60%,#42a5f5 100%); color: #fff; border: none; border-radius: 30px; padding: 0.6em 1.8em; font-size: 1.1em; font-weight: 500; box-shadow: 0 2px 8px rgba(25,118,210,0.10); cursor: pointer; transition: background 0.2s, transform 0.2s; margin-left: 0; outline: none; display: flex; align-items: center; gap: 0.5em;">
+            <span style="font-size:1.3em;">⟵</span> Volver
+        </button>
+        <h1 style="flex:1; text-align: center; margin: 0; font-size: 2.5em; color: #1976d2; letter-spacing: 2px; font-family: 'Segoe UI', 'Arial', sans-serif; font-weight: 700; text-shadow: 0 2px 8px rgba(66,165,245,0.08);">Calendario</h1>
+        <span style="width: 120px;"></span>
+    </div>
+    <div class="calendar" id="calendar"></div>
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar evento</h3>
+            <input type="text" id="eventTitle" placeholder="Título del evento">
+            <textarea id="eventDesc" placeholder="Descripción"></textarea>
+            <div class="modal-buttons">
+                <button id="saveEvent">Guardar</button>
+                <button id="deleteEvent" style="display:none;">Eliminar</button>
+                <button id="closeModal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <script src="calendario.js"></script>
+</body>
+</html>

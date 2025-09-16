@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear servidor</title>
+    <link rel="stylesheet" href="headfooter.css">
+    <link rel="stylesheet" href="moviles.css">
+    <link rel="icon" href="favicon.ico?v=3" type="image/x-icon">
+    <style>
+        .container {
+            padding-top: 20px;
+        }
+        
+        .servidor-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .servidor-container h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        .boton-servidor {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+        }
+        
+        .boton-servidor:hover {
+            background: linear-gradient(45deg, #45a049, #4CAF50);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .descripcion-servidor {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .descripcion-servidor p {
+            color: #fff;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .servidor-container h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            
+            .boton-servidor {
+                padding: 15px 30px;
+                font-size: 1.1em;
+                margin: 15px;
+            }
+            
+            .descripcion-servidor {
+                margin: 15px 10px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semestre VI</h1>
+    </header>
+    <button><a href="index.html">Volver</a></button>
+    <main id="maindemovil">
+        <div class="servidor-container">
+            <h1>Crear servidor</h1>
+            
+            <div class="descripcion-servidor">
+                <p>Accede a la herramienta para crear y configurar tu servidor</p>
+                <p>Configura tu entorno de desarrollo de manera rápida y sencilla</p>
+            </div>
+            
+            <a href="#" class="boton-servidor" id="enlace-servidor">
+                🚀 Ir al servidor
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>&copy; Universidad Nacional de Colombia</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Aquí puedes cambiar el enlace cuando lo tengas
+        document.getElementById('enlace-servidor').addEventListener('click', function(e) {
+            // Cambiar '#' por tu enlace real
+            const enlaceServidor = 'https://www.vpnjantit.com/create-free-account?server=mx3&type=SSH'; // <-- Cambiar aquí tu enlace
+            
+            if (enlaceServidor === '#') {
+                e.preventDefault();
+                alert('El enlace del servidor aún no ha sido configurado');
+            } else {
+                window.open(enlaceServidor, '_blank');
+            }
+        });
+    </script>
+</body>
+</html>
